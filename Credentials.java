@@ -214,7 +214,7 @@ public class Credentials {
 
       if (inputPassword.equals(decryptedPassword)) {
        System.out.println("Login successful!");
-       loggedInUser = new User(decryptedUsername, decryptedPassword);
+       currentUser = new User(decryptedUsername, decryptedPassword);
        validLogin = true;
        break;
       } else {

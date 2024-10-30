@@ -14,6 +14,8 @@ public class StartUp {
 
     static Credentials credentials = new Credentials("Terms/Terms-to-Block.csv");
 
+    static User loggedInUser;
+
 
     public static void IntOptions() {
         boolean happy = false;
@@ -49,7 +51,10 @@ public class StartUp {
                         case "2":
                             happy = true;
                             System.out.println("Logging In...");
-                            User loggedinUser = credentials.login();
+                            loggedInUser = credentials.login();
+                            if (!loggedInUser = null) {
+                                System.out.println("Welcome " + loggedInUser.getUsername() + "!");
+                            }
                             boolean createAuthFlag = createAuthFlag();
 
                             operationSuccess = createAuthFlag;
