@@ -49,7 +49,7 @@ public class StartUp {
                         case "2":
                             happy = true;
                             System.out.println("Logging In...");
-                            credentials.login();
+                            User loggedinUser = credentials.login();
                             boolean createAuthFlag = createAuthFlag();
 
                             operationSuccess = createAuthFlag;

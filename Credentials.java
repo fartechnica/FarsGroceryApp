@@ -12,6 +12,7 @@ public class Credentials {
  public String filePath;
  static Scanner sc = new Scanner(System.in);
  public Crypto crypto;
+ private User currentUser;
 
  public Credentials(String filePath) {
   this.filePath = filePath;
@@ -229,7 +230,11 @@ public class Credentials {
     LoggerUtility.severe("Error reading credentials file, CODE: 00007X, in class: " + Credentials.class.getName());
    }
   }
-  return loggedInUser;
+  return currentUser;
+ }
+
+ public User getCurrentUser() {
+  return currentUser;
  }
 
  public String getUsername() {
