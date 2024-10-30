@@ -52,7 +52,7 @@ public class StartUp {
                             happy = true;
                             System.out.println("Logging In...");
                             loggedInUser = credentials.login();
-                            if (!loggedInUser = null) {
+                            if (loggedInUser != null) {
                                 System.out.println("Welcome " + loggedInUser.getUsername() + "!");
                             }
                             boolean createAuthFlag = createAuthFlag();
