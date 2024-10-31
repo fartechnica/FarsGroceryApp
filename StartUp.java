@@ -25,9 +25,9 @@ public class StartUp {
             System.out.println("                                                                        ");
             ASCIIArtDisplay.displayText2("-------------------------------------------------------------------");
             System.out.println();
-            System.out.println("1. Create Login");
-            System.out.println("2. Login");
-            System.out.println("0. Exit");
+            System.out.println("[1] Create Login");
+            System.out.println("[2] Login");
+            System.out.println("[0] Exit");
             ASCIIArtDisplay.displayText2("-------------------------------------------------------------------");
             System.out.println();
 
@@ -54,6 +54,8 @@ public class StartUp {
                             loggedInUser = credentials.login();
                             if (loggedInUser != null) {
                                 System.out.println("Welcome " + loggedInUser.getUsername() + "!");
+                                User.initialize();
+
                             }
                             boolean createAuthFlag = createAuthFlag();
 
