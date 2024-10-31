@@ -27,7 +27,7 @@ public class Crypto {
                 userKey = (SecretKey) keyIn.readObject();
                 iv = (byte[]) ivIn.readObject();
             } catch (Exception e) {
-                LoggerUtility.severe("Error loading key and IV, Code: 00007X, in Class: " + Crypto.class.getName());
+                LoggerUtility.severe("Error loading key and IV, Code: 00006X, in Class: " + Crypto.class.getName());
                 generateKeyAndIv();
             }
         } else {
@@ -47,7 +47,7 @@ public class Crypto {
 
             storeKeyAndIv("encrypted/keyFile", "encrypted/ivFile");
         } catch (Exception e) {
-            LoggerUtility.severe("Key and IV generation failed, Code: 00008X, in Class:  " + Crypto.class.getName());
+            LoggerUtility.severe("Key and IV generation failed, Code: 00007X, in Class:  " + Crypto.class.getName());
         }
     }
 
@@ -57,7 +57,7 @@ public class Crypto {
             keyOut.writeObject(userKey);
             ivOut.writeObject(iv);
         } catch (IOException e) {
-            LoggerUtility.severe("Failed to write key and IV to file, Code: 00009X, in Class:" + Crypto.class.getName());
+            LoggerUtility.severe("Failed to write key and IV to file, Code: 00008X, in Class:" + Crypto.class.getName());
         }
     }
 
@@ -68,7 +68,7 @@ public class Crypto {
             byte[] encryptedBytes = cipher.doFinal(data.getBytes());
             return Base64.getEncoder().encodeToString(encryptedBytes);
         } catch (Exception e) {
-            LoggerUtility.severe("Encryption failed, CODE: 00010X, in Class: " + Crypto.class.getName());
+            LoggerUtility.severe("Encryption failed, CODE: 00009X, in Class: " + Crypto.class.getName());
             return null;
         }
     }
@@ -81,7 +81,7 @@ public class Crypto {
             byte[] decryptedBytes = cipher.doFinal(decodedBytes);
             return new String(decryptedBytes);
         } catch (Exception e) {
-            LoggerUtility.severe("Decryption failed, CODE: 00011X, in Class: " + Crypto.class.getName());
+            LoggerUtility.severe("Decryption failed, CODE: 00010X, in Class: " + Crypto.class.getName());
             return null;
         }
     }

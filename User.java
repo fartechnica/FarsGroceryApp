@@ -45,11 +45,9 @@ public class User {
                     createGroceryList();
                     break;
                 case "2":
-
                     modifyGroceryList();
                     break;
                 case "3":
-
                     browseCatalog();
                     break;
                 case "0":
@@ -63,14 +61,11 @@ public class User {
     }
 
     private void browseCatalog() {
-
     }
 
     private void createGroceryList() {
         System.out.print("Enter a number for this grocery list: ");
         String number = sc.nextLine();
-
-
         String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
         String filename = getUsername() + "List" + number + date + ".txt";
 
@@ -82,14 +77,11 @@ public class User {
                 if (item.equalsIgnoreCase("done")) {
                     break;
                 }
-
                 writer.write(item + "\n");
             }
-
             System.out.println("Grocery list created successfully: " + filename);
         } catch (IOException e) {
             System.err.println("Error creating grocery list: " + e.getMessage());
         }
     }
-
 }

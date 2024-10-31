@@ -3,26 +3,14 @@ import java.util.Scanner;
 public class StartUp {
 
     static Scanner sc = new Scanner(System.in);
-
-    public static boolean createFlagForLogin() {
-        return true;
-    }
-
-    public static boolean createAuthFlag() {
-        return true;
-    }
-
     static Credentials credentials = new Credentials("Terms/Terms-to-Block.csv");
-
     static User loggedInUser;
 
-
     public static void IntOptions() {
-        boolean happy = false;
-        boolean operationSuccess = false;
+        boolean running = true;
 
-        while (!happy) {
-            System.out.println("                                                                        ");
+        while (running) {
+            System.out.println();
             ASCIIArtDisplay.displayText2("-------------------------------------------------------------------");
             System.out.println();
             System.out.println("[1] Create Login");
@@ -40,43 +28,31 @@ public class StartUp {
                 if (decision.equalsIgnoreCase("y")) {
                     switch (option) {
                         case "1":
-                            happy = true;
                             System.out.println("Creating login...");
-                            boolean createLoginFlag = createFlagForLogin();
                             credentials.createLogin();
-                            operationSuccess = createLoginFlag;
-                            IntOptions();
                             break;
 
                         case "2":
-                            happy = true;
                             System.out.println("Logging In...");
                             loggedInUser = credentials.login();
                             if (loggedInUser != null) {
                                 System.out.println("Welcome " + loggedInUser.getUsername() + "!");
-                                User.initialize();
-
+                            } else {
+                                System.out.println("Login failed, please try again.");
                             }
-                            boolean createAuthFlag = createAuthFlag();
-
-                            operationSuccess = createAuthFlag;
                             break;
 
                         case "0":
-                            happy = true;
+                            running = false;
                             System.out.println("Exiting...");
                             break;
                     }
-                } else if (decision.equalsIgnoreCase("n")) {
-                    System.out.println("Operation cancelled.");
                 } else {
-                    System.out.println("Please provide a valid input (y/n).");
+                    System.out.println("Operation cancelled.");
                 }
             } else {
                 System.out.println("Invalid option, please try again.");
             }
         }
-
     }
-
 }

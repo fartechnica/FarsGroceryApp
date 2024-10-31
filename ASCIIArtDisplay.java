@@ -19,7 +19,7 @@ public class ASCIIArtDisplay {
                 try {
                     Thread.sleep(100);
                 } catch (InterruptedException e) {
-                    LoggerUtility.severe("Interrupted Exception, Code: 00013X in class: " + ASCIIArtDisplay.class.getName());
+                    LoggerUtility.severe("Interrupted Exception, Code: 00011X in class: " + ASCIIArtDisplay.class.getName());
                 }
             }
 
@@ -36,7 +36,7 @@ public class ASCIIArtDisplay {
                 try {
                     Thread.sleep(5);
                 } catch (InterruptedException e) {
-                    LoggerUtility.severe("Interrupted Exception, Code: 00014X in class: " + ASCIIArtDisplay.class.getName());
+                    LoggerUtility.severe("Interrupted Exception, Code: 00012X in class: " + ASCIIArtDisplay.class.getName());
                 }
             }
 

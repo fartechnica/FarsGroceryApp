@@ -2,7 +2,9 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.Scanner;
 
 public class Credentials {
 
@@ -88,7 +90,6 @@ public class Credentials {
 
   while (!validInput) {
    System.out.println("Press 0 to exit..");
-   System.out.println();
    System.out.println("Please enter your new username:");
    String inputUsername = sc.nextLine().trim().toLowerCase();
 
@@ -113,7 +114,7 @@ public class Credentials {
    }
 
    System.out.println("Please enter your new password:");
-   String inputPassword = sc.nextLine().trim().toLowerCase();
+   String inputPassword = sc.nextLine().trim();
 
    if (inputPassword.equals("0")) {
     System.out.println("Exiting login creation..");
@@ -200,7 +201,7 @@ public class Credentials {
      if (inputUsername.equals(decryptedUsername)) {
       found = true;
       System.out.println("Please enter your password:");
-      String inputPassword = sc.nextLine().trim().toLowerCase();
+      String inputPassword = sc.nextLine().trim();
 
       if (inputPassword.equals("0")) {
        System.out.println("Exiting login.");
