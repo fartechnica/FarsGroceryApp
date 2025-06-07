@@ -9,4 +9,3 @@ You can compile and use the application by doing:
 3. java Main.java
 
 Have fun!
-- Faraaz
